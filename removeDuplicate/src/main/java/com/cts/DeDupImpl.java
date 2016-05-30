@@ -50,7 +50,7 @@ public class DeDupImpl implements DeDupInterface {
 		if (inputArr.length < 2)
 			return inputArr;
 		List<Integer> listWithDuplicates = Arrays.asList(inputArr);
-		List<Object> listWithoutDuplicates = listWithDuplicates.parallelStream().distinct()
+		List<Object> listWithoutDuplicates = listWithDuplicates.stream().distinct()
 				.collect(Collectors.toList());
 		return (Integer[]) listWithoutDuplicates.toArray(new Integer[listWithoutDuplicates.size()]);
 	}
